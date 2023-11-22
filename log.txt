@@ -1,0 +1,21 @@
+16 baseline
+32 baseline
+64 baseline
+16 nomixup nosoft
+32 nomixup nosoft
+64 nomixup nosoft
+
+32 nomixup soft
+32 mixup nosoft
+
+16 nomixup soft
+16 mixup nosoft
+
+64 nomixup soft
+64 mixup nosoft
+
+16 ep=0.05
+16 ep=0.025
+16 ep=0.012
+16 ep=0.006
+
