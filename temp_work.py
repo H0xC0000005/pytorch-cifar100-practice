@@ -1,13 +1,41 @@
-import torch
+import numpy as np
 
-# Your class labels
-class_labels = torch.tensor([1, 3, 2, 1, 4])
+k = 2
+# Assuming you have a NumPy array with shape [100]
+original_array = np.array(
+    [
+        [
+            5,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+        ],
+        [
+            1,
+            2,
+            3,
+            3,
+            9,
+            8,
+            7,
+        ],
+    ]
+)  # Replace this with your array
 
-# Number of classes
-num_classes = 5
+# Use np.partition to get the five largest elements
+partitioned_array = np.partition(original_array, -k)
 
-# Convert to one-hot encoding
-one_hot_encoding = torch.eye(num_classes)[class_labels]
+# Get the five largest elements
+largest_elements = partitioned_array[:, -k:]
 
-print(one_hot_encoding)
-print(torch.eye(num_classes))
+# Get the other 95 smaller elements
+smaller_elements = partitioned_array[:, :-k]
+
+print("Original Array:", original_array)
+print("Five Largest Elements:", largest_elements)
+print(f"types:{type(largest_elements)}, {type(smaller_elements)}")
+print("Other 95 Smaller Elements:", smaller_elements)
+print(f"mean: {np.mean(largest_elements, axis=1)}")

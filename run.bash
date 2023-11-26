@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=0
 
 python3 train.py \
     --net resnet101 \
@@ -7,7 +7,7 @@ python3 train.py \
     --warm 5 \
     --lr 0.001 \
     --use_softlabel \
-    --use_epsilon 0.006
+    --use_epsilon 0.003
 
 # optimizer
 # --use_epsilon
